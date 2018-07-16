@@ -4,8 +4,8 @@ defmodule Platform.Emails do
   """
 
   import Bamboo.Email
-  use Bamboo.Phoenix, view: HomeWeb.EmailView
-  alias Home.Emails.Mailer
+  use Bamboo.Phoenix, view: PortfolioWeb.EmailView
+  alias Portfolio.Emails.Mailer
 
   @from "chawla.rohit2208@gmail.com"
 

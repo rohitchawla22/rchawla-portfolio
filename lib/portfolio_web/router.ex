@@ -17,8 +17,13 @@ defmodule PortfolioWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/blog", PageController, :blog
+    post "/contact_form/new", ContactFormController, :new
   end
 
+  if Mix.env == :dev do
+    forward "/sent_emails", Bamboo.EmailPreviewPlug
+  end
   # Other scopes may use custom stacks.
   # scope "/api", PortfolioWeb do
   #   pipe_through :api
